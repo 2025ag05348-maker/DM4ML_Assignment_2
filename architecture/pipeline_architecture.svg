@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">DM4ML Assignment 2 Recommendation Pipeline Architecture</title>
+  <desc id="desc">MovieLens data flows through ingestion, validation, preparation, feature engineering, two recommendation models, evaluation and reports. Prefect orchestrates the stages and MLflow tracks model experiments.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#52657A"/></marker>
+    <marker id="dashArrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth"><path d="M0,0 L0,6 L9,3 z" fill="#8063C7"/></marker>
+    <style>
+      .h1{font:700 34px Inter,Arial,sans-serif;fill:#172B4D}.sub{font:16px Inter,Arial,sans-serif;fill:#52657A}
+      .boxTitle{font:700 19px Inter,Arial,sans-serif;fill:#17324D}.body{font:15px Inter,Arial,sans-serif;fill:#30465C}
+      .small{font:13px Inter,Arial,sans-serif;fill:#52657A}.stage{font:700 13px Inter,Arial,sans-serif;fill:#FFFFFF;letter-spacing:1px}
+      .line{stroke:#52657A;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#8063C7;stroke-width:2.3;stroke-dasharray:8 7;fill:none;marker-end:url(#dashArrow)}
+    </style>
+  </defs>
+  <rect width="1600" height="1120" fill="#F6F8FB"/>
+  <rect x="36" y="28" width="1528" height="1064" rx="24" fill="#FFFFFF" stroke="#D9E1EA" stroke-width="2"/>
+  <text x="800" y="82" text-anchor="middle" class="h1">DM4ML Assignment 2 — Recommendation System Pipeline</text>
+  <text x="800" y="113" text-anchor="middle" class="sub">Suraj Gate  |  BITS ID: 2025ag05348  |  MovieLens 1M  |  Python · MLflow · Prefect</text>
+
+  <!-- Sources -->
+  <rect x="70" y="158" width="300" height="176" rx="16" fill="#EAF2FF" stroke="#4776B8" stroke-width="2"/>
+  <rect x="70" y="158" width="300" height="34" rx="14" fill="#4776B8"/><text x="90" y="181" class="stage">DATA SOURCE</text>
+  <text x="92" y="225" class="boxTitle">MovieLens 1M</text>
+  <text x="92" y="254" class="body">users.dat  ·  6,040 users</text>
+  <text x="92" y="281" class="body">movies.dat · 3,883 movies</text>
+  <text x="92" y="308" class="body">ratings.dat · 1,000,209 ratings</text>
+
+  <!-- Pipeline stage boxes -->
+  <rect x="440" y="158" width="330" height="176" rx="16" fill="#E8F5EE" stroke="#3F8C64" stroke-width="2"/>
+  <rect x="440" y="158" width="330" height="34" rx="14" fill="#3F8C64"/><text x="460" y="181" class="stage">01 · INGESTION</text>
+  <text x="462" y="229" class="boxTitle">Load and standardize</text>
+  <text x="462" y="258" class="body">Parse :: delimited files</text>
+  <text x="462" y="285" class="body">Apply explicit column names/types</text>
+  <text x="462" y="312" class="body">Write Parquet + ingestion summary</text>
+
+  <rect x="840" y="158" width="340" height="176" rx="16" fill="#E8F5EE" stroke="#3F8C64" stroke-width="2"/>
+  <rect x="840" y="158" width="340" height="34" rx="14" fill="#3F8C64"/><text x="860" y="181" class="stage">02 · VALIDATION</text>
+  <text x="862" y="229" class="boxTitle">Automated data quality</text>
+  <text x="862" y="258" class="body">Missing values · data types · duplicates</text>
+  <text x="862" y="285" class="body">Rating range · timestamp validity</text>
+  <text x="862" y="312" class="body">User/movie referential integrity</text>
+
+  <rect x="1240" y="158" width="290" height="176" rx="16" fill="#FCE9E9" stroke="#C65B5B" stroke-width="2"/>
+  <rect x="1240" y="158" width="290" height="34" rx="14" fill="#C65B5B"/><text x="1260" y="181" class="stage">ERROR DATASET</text>
+  <text x="1262" y="237" class="boxTitle">Rejected records</text>
+  <text x="1262" y="268" class="body">data/errors/</text>
+  <text x="1262" y="297" class="small">Separate CSV error outputs</text>
+
+  <!-- second row -->
+  <rect x="250" y="432" width="430" height="190" rx="16" fill="#E8F5EE" stroke="#3F8C64" stroke-width="2"/>
+  <rect x="250" y="432" width="430" height="34" rx="14" fill="#3F8C64"/><text x="270" y="455" class="stage">03 · PREPARATION &amp; TRANSFORMATION</text>
+  <text x="274" y="506" class="boxTitle">Chronological data preparation</text>
+  <text x="274" y="536" class="body">Unix timestamp → UTC datetime</text>
+  <text x="274" y="564" class="body">Per-user 80:20 chronological train/test split</text>
+  <text x="274" y="592" class="body">User activity · item popularity · CSR matrix</text>
+
+  <rect x="760" y="432" width="430" height="190" rx="16" fill="#E8F5EE" stroke="#3F8C64" stroke-width="2"/>
+  <rect x="760" y="432" width="430" height="34" rx="14" fill="#3F8C64"/><text x="780" y="455" class="stage">04 · FEATURE MANAGEMENT</text>
+  <text x="784" y="506" class="boxTitle">Reusable feature layer</text>
+  <text x="784" y="536" class="body">User features · item features</text>
+  <text x="784" y="564" class="body">Train/test interaction history features</text>
+  <text x="784" y="592" class="body">24-entry feature catalog · leakage controls</text>
+
+  <rect x="1270" y="432" width="260" height="190" rx="16" fill="#E9F4F5" stroke="#4D9298" stroke-width="2"/>
+  <rect x="1270" y="432" width="260" height="34" rx="14" fill="#4D9298"/><text x="1290" y="455" class="stage">DATA OUTPUTS</text>
+  <text x="1292" y="511" class="boxTitle">Parquet / CSV / JSON</text>
+  <text x="1292" y="543" class="body">Train + test</text>
+  <text x="1292" y="571" class="body">Features + summaries</text>
+  <text x="1292" y="599" class="small">Reports and logs</text>
+
+  <!-- model row -->
+  <rect x="250" y="720" width="300" height="158" rx="16" fill="#FFF2DC" stroke="#C58A32" stroke-width="2"/>
+  <rect x="250" y="720" width="300" height="34" rx="14" fill="#C58A32"/><text x="270" y="743" class="stage">05A · BASELINE MODEL</text>
+  <text x="274" y="797" class="boxTitle">Popularity recommender</text>
+  <text x="274" y="827" class="body">Training interaction count</text>
+  <text x="274" y="853" class="body">Rating + MovieID tie-breaks</text>
+
+  <rect x="600" y="720" width="350" height="158" rx="16" fill="#FFF2DC" stroke="#C58A32" stroke-width="2"/>
+  <rect x="600" y="720" width="350" height="34" rx="14" fill="#C58A32"/><text x="620" y="743" class="stage">05B · PERSONALIZED MODEL</text>
+  <text x="624" y="797" class="boxTitle">Collaborative filtering</text>
+  <text x="624" y="827" class="body">Truncated SVD · 32 components</text>
+  <text x="624" y="853" class="body">Rank unseen movies per user</text>
+
+  <rect x="1000" y="720" width="270" height="158" rx="16" fill="#F0EAFE" stroke="#8063C7" stroke-width="2"/>
+  <rect x="1000" y="720" width="270" height="34" rx="14" fill="#8063C7"/><text x="1020" y="743" class="stage">06 · EVALUATION</text>
+  <text x="1024" y="797" class="boxTitle">Top-5 evaluation</text>
+  <text x="1024" y="827" class="body">Precision · Recall · NDCG</text>
+  <text x="1024" y="853" class="body">Coverage · Genre diversity</text>
+
+  <rect x="1320" y="720" width="210" height="158" rx="16" fill="#E9F4F5" stroke="#4D9298" stroke-width="2"/>
+  <rect x="1320" y="720" width="210" height="34" rx="14" fill="#4D9298"/><text x="1340" y="743" class="stage">RESULTS</text>
+  <text x="1344" y="797" class="boxTitle">Comparison</text>
+  <text x="1344" y="827" class="body">CSV + JSON</text>
+  <text x="1344" y="853" class="small">Model artifacts</text>
+
+  <!-- orchestration and tracking footer -->
+  <rect x="250" y="946" width="680" height="94" rx="15" fill="#F0EAFE" stroke="#8063C7" stroke-width="2"/>
+  <text x="278" y="983" class="boxTitle">Prefect orchestration</text>
+  <text x="278" y="1012" class="body">Runs the stages in dependency order · records task states and logs · verifies 19 artifacts</text>
+  <rect x="970" y="946" width="560" height="94" rx="15" fill="#F0EAFE" stroke="#8063C7" stroke-width="2"/>
+  <text x="998" y="983" class="boxTitle">MLflow experiment tracking</text>
+  <text x="998" y="1012" class="body">SQLite metadata · parameters · metrics · model/recommendation artifacts</text>
+
+  <!-- arrows main -->
+  <path d="M370 246 H440" class="line"/>
+  <path d="M770 246 H840" class="line"/>
+  <path d="M1180 246 H1240" class="line"/>
+  <path d="M1010 334 V382 H465 V432" class="line"/>
+  <text x="1050" y="372" class="small">valid records</text>
+  <path d="M465 622 V675 H465 V720" class="line"/>
+  <path d="M680 527 H760" class="line"/>
+  <path d="M975 622 V675 H775 V720" class="line"/>
+  <path d="M1190 527 H1270" class="line"/>
+  <path d="M550 799 H600" class="line"/>
+  <path d="M950 799 H1000" class="line"/>
+  <path d="M1270 799 H1320" class="line"/>
+
+  <!-- dashed tracking/orchestration links -->
+  <path d="M600 878 V910 H1250 V878" class="dash"/>
+  <path d="M1110 878 V925" class="dash"/>
+  <path d="M340 946 V915 H140 V130 H600 V158" class="dash"/>
+  <text x="86" y="520" class="small" transform="rotate(-90 86 520)">Prefect controls the sequential workflow</text>
+
+  <text x="800" y="1070" text-anchor="middle" class="small">DM4ML Assignment 2 · Student ID 2025ag05348</text>
+</svg>

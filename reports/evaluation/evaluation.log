@@ -1,0 +1,20 @@
+2026-11-08 17:38:24,937 | INFO | __main__ | Starting DM4ML recommendation model evaluation
+2026-11-08 17:38:24,993 | INFO | __main__ | Loaded 60,400 recommendation rows for popularity_baseline
+2026-11-08 17:38:25,002 | INFO | __main__ | Loaded 60,400 recommendation rows for collaborative_filtering_svd
+2026-11-08 17:38:25,002 | INFO | __main__ | Loaded 202,451 chronological test interactions
+2026-11-08 17:38:25,002 | INFO | __main__ | Loaded 3,883 movies for catalogue and genre evaluation
+2026-11-08 17:38:25,659 | INFO | __main__ | popularity_baseline evaluation: Precision@5=0.08865 Recall@5=0.02635 NDCG@5=0.09375 Coverage=0.02189 Diversity=0.67655
+2026-11-08 17:38:26,405 | INFO | __main__ | collaborative_filtering_svd evaluation: Precision@5=0.10977 Recall@5=0.04757 NDCG@5=0.11795 Coverage=0.16302 Diversity=0.71913
+2026-11-08 17:38:27,783 | INFO | __main__ | Evaluation comparison saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/evaluation/model_evaluation_results.csv
+2026-11-08 17:38:27,784 | INFO | __main__ | Evaluation summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/evaluation/evaluation_summary.json
+2026-11-08 17:38:27,784 | INFO | __main__ | Both model evaluations were logged to their MLflow runs
+2026-11-08 17:42:42,675 | INFO | __main__ | Starting DM4ML recommendation model evaluation
+2026-11-08 17:42:42,731 | INFO | __main__ | Loaded 60,400 recommendation rows for popularity_baseline
+2026-11-08 17:42:42,738 | INFO | __main__ | Loaded 60,400 recommendation rows for collaborative_filtering_svd
+2026-11-08 17:42:42,739 | INFO | __main__ | Loaded 202,451 chronological test interactions
+2026-11-08 17:42:42,739 | INFO | __main__ | Loaded 3,883 movies for catalogue and genre evaluation
+2026-11-08 17:42:43,395 | INFO | __main__ | popularity_baseline evaluation: Precision@5=0.08865 Recall@5=0.02635 NDCG@5=0.09375 Coverage=0.02189 Diversity=0.67655
+2026-11-08 17:42:44,127 | INFO | __main__ | collaborative_filtering_svd evaluation: Precision@5=0.10977 Recall@5=0.04757 NDCG@5=0.11795 Coverage=0.16302 Diversity=0.71913
+2026-11-08 17:42:45,586 | INFO | __main__ | Evaluation comparison saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/evaluation/model_evaluation_results.csv
+2026-11-08 17:42:45,587 | INFO | __main__ | Evaluation summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/evaluation/evaluation_summary.json
+2026-11-08 17:42:45,587 | INFO | __main__ | Both model evaluations were logged to their MLflow runs

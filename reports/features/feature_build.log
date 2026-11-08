@@ -1,0 +1,36 @@
+2026-11-08 17:11:15,093 | INFO | __main__ | Starting DM4ML feature management stage
+2026-11-08 17:11:15,134 | INFO | __main__ | Loaded users_validated.parquet (6,040 rows)
+2026-11-08 17:11:15,141 | INFO | __main__ | Loaded movies_validated.parquet (3,883 rows)
+2026-11-08 17:11:15,246 | INFO | __main__ | Loaded train.parquet (797,758 rows)
+2026-11-08 17:11:15,273 | INFO | __main__ | Loaded test.parquet (202,451 rows)
+2026-11-08 17:11:15,293 | INFO | __main__ | Loaded user_activity_summary.parquet (6,040 rows)
+2026-11-08 17:11:15,311 | INFO | __main__ | Loaded item_popularity_summary.parquet (3,667 rows)
+2026-11-08 17:11:18,964 | INFO | __main__ | Built user features for 6,040 users
+2026-11-08 17:11:18,982 | INFO | __main__ | Built item features for 3,883 movies
+2026-11-08 17:11:20,540 | INFO | __main__ | Built historical features for 797,758 training interactions
+2026-11-08 17:11:20,698 | INFO | __main__ | Built historical features for 202,451 test interactions
+2026-11-08 17:11:20,719 | INFO | __main__ | Saved user_features.parquet (6,040 rows)
+2026-11-08 17:11:20,729 | INFO | __main__ | Saved item_features.parquet (3,883 rows)
+2026-11-08 17:11:21,165 | INFO | __main__ | Saved interaction_features_train.parquet (797,758 rows)
+2026-11-08 17:11:21,347 | INFO | __main__ | Saved interaction_features_test.parquet (202,451 rows)
+2026-11-08 17:11:21,350 | INFO | __main__ | Saved feature catalog: feature_catalog.csv
+2026-11-08 17:11:21,351 | INFO | __main__ | Feature summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/features/feature_summary.json
+2026-11-08 17:11:21,352 | INFO | __main__ | Feature management completed successfully
+2026-11-08 17:42:26,239 | INFO | __main__ | Starting DM4ML feature management stage
+2026-11-08 17:42:26,282 | INFO | __main__ | Loaded users_validated.parquet (6,040 rows)
+2026-11-08 17:42:26,290 | INFO | __main__ | Loaded movies_validated.parquet (3,883 rows)
+2026-11-08 17:42:26,337 | INFO | __main__ | Loaded train.parquet (797,758 rows)
+2026-11-08 17:42:26,355 | INFO | __main__ | Loaded test.parquet (202,451 rows)
+2026-11-08 17:42:26,366 | INFO | __main__ | Loaded user_activity_summary.parquet (6,040 rows)
+2026-11-08 17:42:26,378 | INFO | __main__ | Loaded item_popularity_summary.parquet (3,667 rows)
+2026-11-08 17:42:29,968 | INFO | __main__ | Built user features for 6,040 users
+2026-11-08 17:42:29,988 | INFO | __main__ | Built item features for 3,883 movies
+2026-11-08 17:42:31,566 | INFO | __main__ | Built historical features for 797,758 training interactions
+2026-11-08 17:42:31,727 | INFO | __main__ | Built historical features for 202,451 test interactions
+2026-11-08 17:42:31,745 | INFO | __main__ | Saved user_features.parquet (6,040 rows)
+2026-11-08 17:42:31,758 | INFO | __main__ | Saved item_features.parquet (3,883 rows)
+2026-11-08 17:42:32,232 | INFO | __main__ | Saved interaction_features_train.parquet (797,758 rows)
+2026-11-08 17:42:32,422 | INFO | __main__ | Saved interaction_features_test.parquet (202,451 rows)
+2026-11-08 17:42:32,425 | INFO | __main__ | Saved feature catalog: feature_catalog.csv
+2026-11-08 17:42:32,426 | INFO | __main__ | Feature summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/features/feature_summary.json
+2026-11-08 17:42:32,426 | INFO | __main__ | Feature management completed successfully

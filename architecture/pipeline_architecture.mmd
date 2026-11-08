@@ -1,0 +1,57 @@
+flowchart TB
+    subgraph SOURCE["Data source"]
+        U["MovieLens users.dat"]
+        M["MovieLens movies.dat"]
+        R["MovieLens ratings.dat"]
+    end
+
+    I["01 · Data ingestion\nRead :: files · assign schema · Parquet"]
+    V["02 · Data validation\nNulls · types · duplicates · ratings\n timestamps · referential integrity"]
+    E["Invalid rows\ndata/errors/"]
+    P["03 · Preparation & transformation\nUTC timestamps · per-user chronological 80:20 split\nactivity summaries · item popularity"]
+    X["04 · Feature management\nUser · item · interaction features\n24-entry feature catalog"]
+    T["05 · Model training"]
+    POP["Popularity baseline"]
+    SVD["Collaborative filtering\nTruncated SVD (32 factors)"]
+    EV["06 · Evaluation\nPrecision@5 · Recall@5 · NDCG@5\nCoverage · Genre diversity"]
+    OUT["Reports & recommendation outputs\nParquet · CSV · JSON · model artifacts"]
+    MLF["MLflow tracking\nSQLite metadata + local artifacts"]
+    PF["Prefect orchestration\nSequential task dependencies · run logs · status"]
+
+    U --> I
+    M --> I
+    R --> I
+    I --> V
+    V -->|valid records| P
+    V -->|rejected records| E
+    P --> X
+    X --> T
+    T --> POP
+    T --> SVD
+    POP --> EV
+    SVD --> EV
+    T -. params, metrics, models .-> MLF
+    EV -. evaluation metrics .-> MLF
+    EV --> OUT
+
+    PF -. orchestrates .-> I
+    PF -. orchestrates .-> V
+    PF -. orchestrates .-> P
+    PF -. orchestrates .-> X
+    PF -. orchestrates .-> T
+    PF -. orchestrates .-> EV
+    PF -. verifies .-> OUT
+
+    classDef source fill:#EAF2FF,stroke:#4776B8,color:#152B49
+    classDef process fill:#E8F5EE,stroke:#3F8C64,color:#153D2A
+    classDef model fill:#FFF2DC,stroke:#C58A32,color:#50330A
+    classDef observe fill:#F0EAFE,stroke:#8063C7,color:#302054
+    classDef output fill:#E9F4F5,stroke:#4D9298,color:#183D40
+    classDef error fill:#FCE9E9,stroke:#C65B5B,color:#5B2020
+
+    class U,M,R source
+    class I,V,P,X process
+    class T,POP,SVD model
+    class EV,MLF,PF observe
+    class OUT output
+    class E error

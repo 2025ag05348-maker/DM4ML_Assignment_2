@@ -1,0 +1,41 @@
+{
+    "project": "DM4ML Assignment 2 - Recommendation System Pipeline",
+    "author": "Suraj Gate",
+    "student_id": "2025ag05348",
+    "dataset": "MovieLens 1M",
+    "training_timestamp": "2026-11-08T12:12:39.185478+00:00",
+    "training_data_only": true,
+    "top_n_recommendations": 10,
+    "models": {
+        "popularity_baseline": {
+            "algorithm": "popularity_based",
+            "training_interactions": 797758,
+            "users": 6040,
+            "catalog_items": 3883,
+            "top_n": 10,
+            "recommendation_rows": 60400,
+            "mlflow_run_id": "10172fb44b3f498ebc299a47bc9eea58",
+            "model_artifact": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/models/popularity_model.json",
+            "recommendations_artifact": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/recommendations_popularity.parquet"
+        },
+        "collaborative_filtering_svd": {
+            "algorithm": "collaborative_filtering_truncated_svd",
+            "n_components": 32,
+            "n_iter": 7,
+            "random_state": 42,
+            "training_interactions": 797758,
+            "users": 6040,
+            "training_known_items": 3667,
+            "total_possible_pairs": 22148680,
+            "matrix_density": 0.03601830899177739,
+            "explained_variance_ratio_sum": 0.36095744371414185,
+            "top_n": 10,
+            "recommendation_rows": 60400,
+            "mlflow_run_id": "d62438bdd5f74333ae152fa9945a3b08",
+            "model_artifact": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/models/collaborative_filtering_svd.joblib",
+            "recommendations_artifact": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/recommendations_svd.parquet"
+        }
+    },
+    "mlflow_tracking_uri": "sqlite:////home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/mlflow.db",
+    "mlflow_experiment": "DM4ML_Assignment_2_Recommendation"
+}

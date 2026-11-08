@@ -1,0 +1,43 @@
+# Python virtual environments and bytecode
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+
+# Local secrets and environment configuration
+.env
+.env.*
+!.env.example
+
+# Downloaded source dataset (download with the README instructions)
+data/raw/*
+!data/raw/.gitkeep
+
+# Reproducible, generated intermediate data
+# Keep the feature catalog because it is an assignment deliverable.
+data/processed/*.parquet
+data/features/*.parquet
+data/features/*.npz
+data/features/user_index.csv
+data/features/item_index.csv
+
+# Locally generated model binaries / model metadata
+models/*.joblib
+models/popularity_model.json
+
+# Local MLflow tracking database and artifact store
+mlflow.db
+mlflow.db-shm
+mlflow.db-wal
+mlartifacts/
+mlruns/
+
+# Local Prefect state, if created inside the project
+.prefect/
+prefect.db
+
+# OS/editor temporary files
+.DS_Store
+*.swp
+*~

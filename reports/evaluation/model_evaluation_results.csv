@@ -1,0 +1,3 @@
+model,precision_at_5,recall_at_5,ndcg_at_5,catalogue_coverage,unique_recommended_items,catalogue_size,diversity,ranking_evaluation_users,recommendation_users,recommendation_rows_at_k,relevant_test_interactions,relevance_rating_threshold,k
+popularity_baseline,0.08865461847389558,0.026349872594274622,0.09375359316965985,0.021890291012104043,85,3883,0.6765494323557238,5976,6040,30200,106031,4,5
+collaborative_filtering_svd,0.10977242302543508,0.04756678846110065,0.11794940178357932,0.163018284831316,633,3883,0.7191286331861664,5976,6040,30200,106031,4,5

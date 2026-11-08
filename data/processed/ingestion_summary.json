@@ -1,0 +1,42 @@
+{
+    "project": "DM4ML Assignment 2",
+    "author": "Suraj Gate",
+    "student_id": "2025ag05348",
+    "dataset": "MovieLens 1M",
+    "ingestion_timestamp": "2026-11-08T12:12:12.437668+00:00",
+    "datasets": {
+        "users": {
+            "record_count": 6040,
+            "column_count": 5,
+            "columns": [
+                "UserID",
+                "Gender",
+                "Age",
+                "Occupation",
+                "Zip-code"
+            ],
+            "output_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/users_ingested.parquet"
+        },
+        "movies": {
+            "record_count": 3883,
+            "column_count": 3,
+            "columns": [
+                "MovieID",
+                "Title",
+                "Genres"
+            ],
+            "output_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/movies_ingested.parquet"
+        },
+        "ratings": {
+            "record_count": 1000209,
+            "column_count": 4,
+            "columns": [
+                "UserID",
+                "MovieID",
+                "Rating",
+                "Timestamp"
+            ],
+            "output_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/ratings_ingested.parquet"
+        }
+    }
+}

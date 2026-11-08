@@ -1,0 +1,31 @@
+{
+    "project": "DM4ML Assignment 2 - Recommendation System Pipeline",
+    "author": "Suraj Gate",
+    "student_id": "2025ag05348",
+    "dataset": "MovieLens 1M",
+    "feature_build_timestamp": "2026-11-08T12:12:32.425427+00:00",
+    "leakage_controls": {
+        "user_and_item_aggregates_use_training_data_only": true,
+        "training_interaction_history_excludes_current_event": true,
+        "test_interaction_features_use_training_snapshot_only": true,
+        "observed_rating_is_stored_as_target_not_predictor": true
+    },
+    "record_counts": {
+        "user_features": 6040,
+        "item_features": 3883,
+        "training_interaction_features": 797758,
+        "test_interaction_features": 202451,
+        "feature_catalog_entries": 24
+    },
+    "cold_start": {
+        "test_interactions_for_items_absent_from_training": 54,
+        "note": "Test-only items are retained; their training popularity and history rating are represented as zero."
+    },
+    "outputs": {
+        "user_features": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/user_features.parquet",
+        "item_features": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/item_features.parquet",
+        "interaction_features_train": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/interaction_features_train.parquet",
+        "interaction_features_test": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/interaction_features_test.parquet"
+    },
+    "feature_catalog": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/feature_catalog.csv"
+}

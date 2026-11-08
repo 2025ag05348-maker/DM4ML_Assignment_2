@@ -1,0 +1,13 @@
+{
+    "matrix_type": "scipy.sparse.csr_matrix",
+    "matrix_semantics": "training user-item ratings",
+    "rows": 6040,
+    "columns": 3667,
+    "non_zero_interactions": 797758,
+    "total_possible_user_item_pairs": 22148680,
+    "density": 0.03601830899177739,
+    "value_type": "rating (float32)",
+    "matrix_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/user_item_interaction_matrix.npz",
+    "user_index_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/user_index.csv",
+    "item_index_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/item_index.csv"
+}

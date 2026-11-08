@@ -1,0 +1,38 @@
+2026-11-08 16:48:37,842 | INFO | ============================================================
+2026-11-08 16:48:37,843 | INFO | STARTING MOVIELENS DATA INGESTION
+2026-11-08 16:48:37,843 | INFO | ============================================================
+2026-11-08 16:48:37,843 | INFO | Reading source file: users.dat
+2026-11-08 16:48:37,914 | INFO | Successfully loaded 6,040 records from users.dat
+2026-11-08 16:48:37,914 | INFO | Reading source file: movies.dat
+2026-11-08 16:48:37,933 | INFO | Successfully loaded 3,883 records from movies.dat
+2026-11-08 16:48:37,933 | INFO | Reading source file: ratings.dat
+2026-11-08 16:48:43,375 | INFO | Successfully loaded 1,000,209 records from ratings.dat
+2026-11-08 16:48:43,401 | INFO | Saved 6,040 records to users_ingested.parquet
+2026-11-08 16:48:43,406 | INFO | Saved 3,883 records to movies_ingested.parquet
+2026-11-08 16:48:43,549 | INFO | Saved 1,000,209 records to ratings_ingested.parquet
+2026-11-08 16:48:43,550 | INFO | Ingestion summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/ingestion_summary.json
+2026-11-08 16:48:43,550 | INFO | ============================================================
+2026-11-08 16:48:43,551 | INFO | DATA INGESTION COMPLETED SUCCESSFULLY
+2026-11-08 16:48:43,551 | INFO | ============================================================
+2026-11-08 16:48:43,551 | INFO | USERS: 6,040 records
+2026-11-08 16:48:43,551 | INFO | MOVIES: 3,883 records
+2026-11-08 16:48:43,551 | INFO | RATINGS: 1,000,209 records
+2026-11-08 17:42:06,951 | INFO | ============================================================
+2026-11-08 17:42:06,951 | INFO | STARTING MOVIELENS DATA INGESTION
+2026-11-08 17:42:06,951 | INFO | ============================================================
+2026-11-08 17:42:06,952 | INFO | Reading source file: users.dat
+2026-11-08 17:42:06,988 | INFO | Successfully loaded 6,040 records from users.dat
+2026-11-08 17:42:06,988 | INFO | Reading source file: movies.dat
+2026-11-08 17:42:07,002 | INFO | Successfully loaded 3,883 records from movies.dat
+2026-11-08 17:42:07,002 | INFO | Reading source file: ratings.dat
+2026-11-08 17:42:12,283 | INFO | Successfully loaded 1,000,209 records from ratings.dat
+2026-11-08 17:42:12,308 | INFO | Saved 6,040 records to users_ingested.parquet
+2026-11-08 17:42:12,316 | INFO | Saved 3,883 records to movies_ingested.parquet
+2026-11-08 17:42:12,437 | INFO | Saved 1,000,209 records to ratings_ingested.parquet
+2026-11-08 17:42:12,438 | INFO | Ingestion summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/ingestion_summary.json
+2026-11-08 17:42:12,438 | INFO | ============================================================
+2026-11-08 17:42:12,438 | INFO | DATA INGESTION COMPLETED SUCCESSFULLY
+2026-11-08 17:42:12,438 | INFO | ============================================================
+2026-11-08 17:42:12,438 | INFO | USERS: 6,040 records
+2026-11-08 17:42:12,438 | INFO | MOVIES: 3,883 records
+2026-11-08 17:42:12,438 | INFO | RATINGS: 1,000,209 records

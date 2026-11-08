@@ -1,0 +1,18 @@
+2026-11-08 16:52:02,153 | INFO | __main__ | Starting MovieLens data validation
+2026-11-08 16:52:02,601 | INFO | __main__ | users validation output: 6,040 valid rows, 0 invalid rows
+2026-11-08 16:52:02,608 | INFO | __main__ | movies validation output: 3,883 valid rows, 0 invalid rows
+2026-11-08 16:52:02,759 | INFO | __main__ | ratings validation output: 1,000,209 valid rows, 0 invalid rows
+2026-11-08 16:52:02,760 | INFO | __main__ | Validation report saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/validation/validation_report.json
+2026-11-08 16:52:02,760 | INFO | __main__ | Data validation completed successfully
+2026-11-08 16:52:02,760 | INFO | __main__ | USERS: 6,040 valid / 0 invalid / 6,040 source records
+2026-11-08 16:52:02,760 | INFO | __main__ | MOVIES: 3,883 valid / 0 invalid / 3,883 source records
+2026-11-08 16:52:02,760 | INFO | __main__ | RATINGS: 1,000,209 valid / 0 invalid / 1,000,209 source records
+2026-11-08 17:42:13,143 | INFO | __main__ | Starting MovieLens data validation
+2026-11-08 17:42:13,599 | INFO | __main__ | users validation output: 6,040 valid rows, 0 invalid rows
+2026-11-08 17:42:13,607 | INFO | __main__ | movies validation output: 3,883 valid rows, 0 invalid rows
+2026-11-08 17:42:13,792 | INFO | __main__ | ratings validation output: 1,000,209 valid rows, 0 invalid rows
+2026-11-08 17:42:13,793 | INFO | __main__ | Validation report saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/validation/validation_report.json
+2026-11-08 17:42:13,793 | INFO | __main__ | Data validation completed successfully
+2026-11-08 17:42:13,793 | INFO | __main__ | USERS: 6,040 valid / 0 invalid / 6,040 source records
+2026-11-08 17:42:13,793 | INFO | __main__ | MOVIES: 3,883 valid / 0 invalid / 3,883 source records
+2026-11-08 17:42:13,793 | INFO | __main__ | RATINGS: 1,000,209 valid / 0 invalid / 1,000,209 source records

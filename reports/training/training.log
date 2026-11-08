@@ -1,0 +1,17 @@
+2026-11-08 17:26:23,173 | INFO | __main__ | Starting DM4ML recommendation model training
+2026-11-08 17:26:23,300 | INFO | __main__ | Loaded training matrix (6040, 3667) with 797,758 non-zero interactions
+2026-11-08 17:26:23,853 | INFO | __main__ | Saved 60,400 recommendation rows to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/recommendations_popularity.parquet
+2026-11-08 17:36:16,799 | INFO | __main__ | Starting DM4ML recommendation model training
+2026-11-08 17:36:16,987 | INFO | __main__ | Loaded training matrix (6040, 3667) with 797,758 non-zero interactions
+2026-11-08 17:36:17,475 | INFO | __main__ | Saved 60,400 recommendation rows to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/recommendations_popularity.parquet
+2026-11-08 17:36:21,676 | INFO | __main__ | Training TruncatedSVD with n_components=32, n_iter=7, random_state=42
+2026-11-08 17:36:22,835 | INFO | __main__ | Saved 60,400 recommendation rows to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/recommendations_svd.parquet
+2026-11-08 17:36:22,962 | INFO | __main__ | Training summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/training/training_summary.json
+2026-11-08 17:36:22,962 | INFO | __main__ | Both recommendation models trained and tracked successfully
+2026-11-08 17:42:35,633 | INFO | __main__ | Starting DM4ML recommendation model training
+2026-11-08 17:42:35,749 | INFO | __main__ | Loaded training matrix (6040, 3667) with 797,758 non-zero interactions
+2026-11-08 17:42:36,237 | INFO | __main__ | Saved 60,400 recommendation rows to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/recommendations_popularity.parquet
+2026-11-08 17:42:37,782 | INFO | __main__ | Training TruncatedSVD with n_components=32, n_iter=7, random_state=42
+2026-11-08 17:42:39,085 | INFO | __main__ | Saved 60,400 recommendation rows to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/features/recommendations_svd.parquet
+2026-11-08 17:42:39,186 | INFO | __main__ | Training summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/training/training_summary.json
+2026-11-08 17:42:39,187 | INFO | __main__ | Both recommendation models trained and tracked successfully

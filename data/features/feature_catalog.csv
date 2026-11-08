@@ -1,0 +1,25 @@
+feature_name,entity,data_type,description,source,availability
+Age,user,int,MovieLens age-group code for the user.,users_validated,profile
+Gender,user,string,MovieLens gender value for the user.,users_validated,profile
+Occupation,user,int,MovieLens occupation code for the user.,users_validated,profile
+user_activity_count,user,int,Number of training interactions for the user.,train,training_only
+user_avg_rating,user,float,Mean rating provided by the user in training data.,train,training_only
+user_positive_rating_rate,user,float,Share of training ratings greater than or equal to 4.,train,training_only
+preferred_genre,user,string,Most frequent genre among positive training ratings; fallback to all training interactions.,train + movies_validated,training_only
+user_genre_diversity,user,int,Number of distinct genres in the user's training history.,train + movies_validated,training_only
+Title,item,string,Movie title from the validated movie catalogue.,movies_validated,metadata
+Genres,item,string,Pipe-separated movie genres.,movies_validated,metadata
+movie_year,item,nullable int,Four-digit release year parsed from the movie title when available.,movies_validated,metadata
+item_interaction_count,item,int,Number of training interactions for the movie.,train,training_only
+item_unique_user_count,item,int,Number of distinct training users who rated the movie.,train,training_only
+item_avg_rating,item,float,Mean training rating received by the movie.,train,training_only
+popularity_rank,item,int,"Rank by training interaction count, with deterministic tie-breaking.",train,training_only
+user_history_count_before_event,interaction,int,Number of earlier training interactions by the user.,train history,past_only
+user_history_avg_rating_before_event,interaction,float,Mean rating of the user's earlier training interactions.,train history,past_only
+days_since_previous_user_interaction,interaction,float,Days between this event and the user's preceding training event.,train history,past_only
+item_history_count_before_event,interaction,int,Number of earlier training interactions for the movie.,train history,past_only
+item_history_avg_rating_before_event,interaction,float,Mean rating from earlier training interactions for the movie.,train history,past_only
+days_since_last_training_interaction,interaction,float,Days from the user's last training event to the test event timestamp.,train snapshot + test event time,training_snapshot_only
+event_month,interaction,int,Calendar month extracted from the event timestamp in UTC.,EventTimestamp,event_time
+event_day_of_week,interaction,int,Day of week extracted from the event timestamp in UTC; Monday is 0.,EventTimestamp,event_time
+target_rating,label,float,"Observed rating retained as the supervised/evaluation target, not as a predictor.",ratings,label_only

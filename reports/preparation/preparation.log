@@ -1,0 +1,24 @@
+2026-11-08 17:42:14,655 | INFO | ========================================================================
+2026-11-08 17:42:14,655 | INFO | STARTING DATA PREPARATION AND TRANSFORMATION
+2026-11-08 17:42:14,655 | INFO | ========================================================================
+2026-11-08 17:42:14,656 | INFO | Loading validated users dataset from /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/users_validated.parquet
+2026-11-08 17:42:14,690 | INFO | Loaded 6,040 records from users
+2026-11-08 17:42:14,690 | INFO | Loading validated movies dataset from /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/movies_validated.parquet
+2026-11-08 17:42:14,696 | INFO | Loaded 3,883 records from movies
+2026-11-08 17:42:14,696 | INFO | Loading validated ratings dataset from /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/ratings_validated.parquet
+2026-11-08 17:42:14,735 | INFO | Loaded 1,000,209 records from ratings
+2026-11-08 17:42:16,732 | INFO | Prepared 1,000,209 interactions; timestamp range: 2000-04-25T23:05:32+00:00 to 2003-02-28T17:49:50+00:00
+2026-11-08 17:42:23,082 | INFO | Chronological split completed: 797,758 train records, 202,451 test records
+2026-11-08 17:42:23,362 | INFO | Created user activity summary for 6,040 users
+2026-11-08 17:42:23,465 | INFO | Created popularity summary for 3,667 movies
+2026-11-08 17:42:23,952 | INFO | Saved 1,000,209 records to interactions_prepared.parquet
+2026-11-08 17:42:24,305 | INFO | Saved 797,758 records to train.parquet
+2026-11-08 17:42:24,476 | INFO | Saved 202,451 records to test.parquet
+2026-11-08 17:42:24,489 | INFO | Saved 6,040 records to user_activity_summary.parquet
+2026-11-08 17:42:24,501 | INFO | Saved 3,667 records to item_popularity_summary.parquet
+2026-11-08 17:42:25,385 | INFO | Saved sparse user-item matrix with shape (6040, 3667) and 797,758 non-zero entries (density 0.036018)
+2026-11-08 17:42:25,432 | INFO | Preparation summary saved to /home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/preparation/preparation_summary.json
+2026-11-08 17:42:25,432 | INFO | ========================================================================
+2026-11-08 17:42:25,432 | INFO | DATA PREPARATION AND TRANSFORMATION COMPLETED
+2026-11-08 17:42:25,432 | INFO | Prepared: 1,000,209 | Train: 797,758 | Test: 202,451
+2026-11-08 17:42:25,432 | INFO | ========================================================================

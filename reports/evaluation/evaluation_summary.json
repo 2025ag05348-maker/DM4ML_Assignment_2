@@ -1,0 +1,52 @@
+{
+    "project": "DM4ML Assignment 2 - Recommendation System Pipeline",
+    "author": "Suraj Gate",
+    "student_id": "2025ag05348",
+    "dataset": "MovieLens 1M",
+    "evaluation_timestamp": "2026-11-08T12:12:44.137084+00:00",
+    "evaluation_methodology": {
+        "test_partition": "Per-user chronological holdout (latest 20% of each user's interactions)",
+        "relevance_definition": "Test rating >= 4",
+        "k": 5,
+        "precision_recall_ndcg_population": "Users with at least one relevant test interaction; users without relevant test items are excluded from macro-averaging these three metrics.",
+        "precision_denominator": 5,
+        "coverage_denominator": "All unique movies in movies_validated.parquet",
+        "diversity_definition": "Mean pairwise Jaccard distance between genre sets within each user's top-K recommendation list, then averaged across users with at least two recommendations.",
+        "test_data_used_for_training": false
+    },
+    "models": {
+        "popularity_baseline": {
+            "model": "popularity_baseline",
+            "precision_at_5": 0.08865461847389558,
+            "recall_at_5": 0.026349872594274622,
+            "ndcg_at_5": 0.09375359316965985,
+            "catalogue_coverage": 0.021890291012104043,
+            "unique_recommended_items": 85,
+            "catalogue_size": 3883,
+            "diversity": 0.6765494323557238,
+            "ranking_evaluation_users": 5976,
+            "recommendation_users": 6040,
+            "recommendation_rows_at_k": 30200,
+            "relevant_test_interactions": 106031,
+            "relevance_rating_threshold": 4,
+            "k": 5
+        },
+        "collaborative_filtering_svd": {
+            "model": "collaborative_filtering_svd",
+            "precision_at_5": 0.10977242302543508,
+            "recall_at_5": 0.04756678846110065,
+            "ndcg_at_5": 0.11794940178357932,
+            "catalogue_coverage": 0.163018284831316,
+            "unique_recommended_items": 633,
+            "catalogue_size": 3883,
+            "diversity": 0.7191286331861664,
+            "ranking_evaluation_users": 5976,
+            "recommendation_users": 6040,
+            "recommendation_rows_at_k": 30200,
+            "relevant_test_interactions": 106031,
+            "relevance_rating_threshold": 4,
+            "k": 5
+        }
+    },
+    "comparison_csv": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/reports/evaluation/model_evaluation_results.csv"
+}

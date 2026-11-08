@@ -1,0 +1,141 @@
+{
+    "project": "DM4ML Assignment 2 - Recommendation System Pipeline",
+    "author": "Suraj Gate",
+    "student_id": "2025ag05348",
+    "dataset": "MovieLens 1M",
+    "validation_timestamp": "2026-11-08T12:12:13.792315+00:00",
+    "notes": [
+        "Violation counts can overlap because one row may fail multiple checks.",
+        "invalid_records counts unique rows rejected by at least one rule.",
+        "Referential integrity is checked against users and movies that pass validation."
+    ],
+    "datasets": {
+        "users": {
+            "source_records": 6040,
+            "valid_records": 6040,
+            "invalid_records": 0,
+            "rule_violation_counts": {
+                "missing_required_values": 0,
+                "invalid_integer:UserID": 0,
+                "invalid_integer:Age": 0,
+                "invalid_integer:Occupation": 0,
+                "invalid_string_type:Gender": 0,
+                "invalid_string_type:Zip-code": 0,
+                "duplicate_UserID": 0,
+                "invalid_gender": 0,
+                "invalid_age_group": 0,
+                "invalid_occupation_code": 0
+            },
+            "schema_checks": {
+                "UserID": {
+                    "expected_type": "integer",
+                    "actual_dtype": "int32",
+                    "passed": true
+                },
+                "Gender": {
+                    "expected_type": "string",
+                    "actual_dtype": "string",
+                    "passed": true
+                },
+                "Age": {
+                    "expected_type": "integer",
+                    "actual_dtype": "int8",
+                    "passed": true
+                },
+                "Occupation": {
+                    "expected_type": "integer",
+                    "actual_dtype": "int8",
+                    "passed": true
+                },
+                "Zip-code": {
+                    "expected_type": "string",
+                    "actual_dtype": "string",
+                    "passed": true
+                }
+            },
+            "all_schema_checks_passed": true,
+            "outputs": {
+                "validated_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/users_validated.parquet",
+                "error_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/errors/users_validation_errors.csv"
+            }
+        },
+        "movies": {
+            "source_records": 3883,
+            "valid_records": 3883,
+            "invalid_records": 0,
+            "rule_violation_counts": {
+                "missing_required_values": 0,
+                "invalid_integer:MovieID": 0,
+                "invalid_string_type:Title": 0,
+                "invalid_string_type:Genres": 0,
+                "duplicate_MovieID": 0
+            },
+            "schema_checks": {
+                "MovieID": {
+                    "expected_type": "integer",
+                    "actual_dtype": "int32",
+                    "passed": true
+                },
+                "Title": {
+                    "expected_type": "string",
+                    "actual_dtype": "string",
+                    "passed": true
+                },
+                "Genres": {
+                    "expected_type": "string",
+                    "actual_dtype": "string",
+                    "passed": true
+                }
+            },
+            "all_schema_checks_passed": true,
+            "outputs": {
+                "validated_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/movies_validated.parquet",
+                "error_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/errors/movies_validation_errors.csv"
+            }
+        },
+        "ratings": {
+            "source_records": 1000209,
+            "valid_records": 1000209,
+            "invalid_records": 0,
+            "rule_violation_counts": {
+                "missing_required_values": 0,
+                "invalid_integer:UserID": 0,
+                "invalid_integer:MovieID": 0,
+                "invalid_integer:Rating": 0,
+                "invalid_integer:Timestamp": 0,
+                "invalid_rating_range": 0,
+                "invalid_timestamp": 0,
+                "duplicate_user_movie_interaction": 0,
+                "unknown_UserID_referential_integrity": 0,
+                "unknown_MovieID_referential_integrity": 0
+            },
+            "schema_checks": {
+                "UserID": {
+                    "expected_type": "integer",
+                    "actual_dtype": "int32",
+                    "passed": true
+                },
+                "MovieID": {
+                    "expected_type": "integer",
+                    "actual_dtype": "int32",
+                    "passed": true
+                },
+                "Rating": {
+                    "expected_type": "integer",
+                    "actual_dtype": "int8",
+                    "passed": true
+                },
+                "Timestamp": {
+                    "expected_type": "integer",
+                    "actual_dtype": "int64",
+                    "passed": true
+                }
+            },
+            "all_schema_checks_passed": true,
+            "outputs": {
+                "validated_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/processed/ratings_validated.parquet",
+                "error_file": "/home/suraj/Desktop/DM4ML/2025ag05348_DM4ML_Assignment_2/data/errors/ratings_validation_errors.csv"
+            }
+        }
+    }
+}
