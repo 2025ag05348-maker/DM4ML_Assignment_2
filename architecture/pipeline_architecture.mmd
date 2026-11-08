@@ -1,57 +1,34 @@
 flowchart TB
-    subgraph SOURCE["Data source"]
-        U["MovieLens users.dat"]
-        M["MovieLens movies.dat"]
-        R["MovieLens ratings.dat"]
-    end
-
-    I["01 · Data ingestion\nRead :: files · assign schema · Parquet"]
-    V["02 · Data validation\nNulls · types · duplicates · ratings\n timestamps · referential integrity"]
-    E["Invalid rows\ndata/errors/"]
-    P["03 · Preparation & transformation\nUTC timestamps · per-user chronological 80:20 split\nactivity summaries · item popularity"]
-    X["04 · Feature management\nUser · item · interaction features\n24-entry feature catalog"]
-    T["05 · Model training"]
-    POP["Popularity baseline"]
-    SVD["Collaborative filtering\nTruncated SVD (32 factors)"]
-    EV["06 · Evaluation\nPrecision@5 · Recall@5 · NDCG@5\nCoverage · Genre diversity"]
-    OUT["Reports & recommendation outputs\nParquet · CSV · JSON · model artifacts"]
-    MLF["MLflow tracking\nSQLite metadata + local artifacts"]
-    PF["Prefect orchestration\nSequential task dependencies · run logs · status"]
-
-    U --> I
-    M --> I
-    R --> I
-    I --> V
-    V -->|valid records| P
-    V -->|rejected records| E
-    P --> X
-    X --> T
-    T --> POP
-    T --> SVD
-    POP --> EV
-    SVD --> EV
-    T -. params, metrics, models .-> MLF
-    EV -. evaluation metrics .-> MLF
-    EV --> OUT
-
-    PF -. orchestrates .-> I
-    PF -. orchestrates .-> V
-    PF -. orchestrates .-> P
-    PF -. orchestrates .-> X
-    PF -. orchestrates .-> T
-    PF -. orchestrates .-> EV
-    PF -. verifies .-> OUT
-
-    classDef source fill:#EAF2FF,stroke:#4776B8,color:#152B49
-    classDef process fill:#E8F5EE,stroke:#3F8C64,color:#153D2A
-    classDef model fill:#FFF2DC,stroke:#C58A32,color:#50330A
-    classDef observe fill:#F0EAFE,stroke:#8063C7,color:#302054
-    classDef output fill:#E9F4F5,stroke:#4D9298,color:#183D40
-    classDef error fill:#FCE9E9,stroke:#C65B5B,color:#5B2020
-
-    class U,M,R source
-    class I,V,P,X process
-    class T,POP,SVD model
-    class EV,MLF,PF observe
-    class OUT output
-    class E error
+  subgraph TOP["DATA PROCESSING SEQUENCE - LEFT TO RIGHT"]
+    direction LR
+    DS["01 Data Source<br/>MovieLens 1M<br/>6,040 users | 3,883 movies | 1,000,209 ratings"] -->
+    ING["02 Ingestion<br/>Parse :: files<br/>Schema and data types<br/>Parquet + summary"] -->
+    VAL["03 Validation<br/>Missing values | types | duplicates<br/>Rating range | timestamps | referential integrity<br/>0 invalid rows"] -->
+    PREP["04 Preparation<br/>UTC timestamps<br/>Per-user chronological 80:20 split<br/>Train 797,758 | Test 202,451"]
+  end
+  PREP --> FEAT
+  subgraph BOTTOM["CONTINUE THROUGH THE PIPELINE - RIGHT TO LEFT"]
+    direction RL
+    FEAT["05 Feature Management<br/>User, item and interaction features<br/>24-entry catalog<br/>Training-only history features"] -->
+    TRAIN["06 Model Training<br/>Popularity baseline<br/>Collaborative filtering with Truncated SVD (32 components)"] -->
+    EVAL["07 Model Evaluation<br/>Precision@5 | Recall@5 | NDCG@5<br/>Catalogue coverage | Genre diversity"] -->
+    OUT["08 Outputs<br/>Model and recommendation files<br/>Parquet | CSV | JSON<br/>Reports and logs"]
+  end
+  VAL --> ERR["Rejected records<br/>Separate error CSV outputs in data/errors/"]
+  subgraph OPS["CROSS-CUTTING EXECUTION AND EXPERIMENT TRACKING"]
+    direction LR
+    PF["Prefect orchestration<br/>7 dependent tasks | 41-second successful run<br/>19 artifacts verified"]
+    MLF["MLflow experiment tracking<br/>SQLite metadata | 2 model runs<br/>Parameters | metrics | artifacts"]
+  end
+  classDef source fill:#EAF2FF,stroke:#4778B8,color:#17365D
+  classDef process fill:#E9F5EE,stroke:#3E8B68,color:#17365D
+  classDef model fill:#FFF3DF,stroke:#C28A32,color:#50330A
+  classDef eval fill:#F0ECFC,stroke:#8065C6,color:#302054
+  classDef output fill:#E9F4F5,stroke:#4C9298,color:#183D40
+  classDef error fill:#FCEAEA,stroke:#C65B5B,color:#5B2020
+  class DS source
+  class ING,VAL,PREP,FEAT process
+  class TRAIN model
+  class EVAL eval
+  class OUT output
+  class ERR error

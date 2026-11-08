@@ -77,13 +77,15 @@ The pipeline follows these stages:
 6. **Evaluation:** evaluate the top 5 recommendations with Precision@5, Recall@5, NDCG@5, catalogue coverage, and genre-based diversity. Ratings of 4 or 5 in the test partition are treated as relevant.
 7. **Orchestration:** Prefect executes the six processing modules in dependency order and then verifies the expected output artifacts.
 
-See [`architecture/pipeline_architecture.png`](architecture/pipeline_architecture.png) or [`architecture/pipeline_architecture.svg`](architecture/pipeline_architecture.svg) for the rendered diagram, and [`architecture/pipeline_architecture.mmd`](architecture/pipeline_architecture.mmd) for its editable Mermaid source.
+See [`architecture/pipeline_architecture.png`](architecture/pipeline_architecture.png) or [`architecture/pipeline_architecture.jpg`](architecture/pipeline_architecture.jpg) for the rendered diagram. The SVG is available as a scalable vector, and [`architecture/pipeline_architecture.mmd`](architecture/pipeline_architecture.mmd) is the editable Mermaid source.
 
 ## 5. Repository structure
 
 ```text
 2025ag05348_DM4ML_Assignment_2/
 ├── architecture/
+│   ├── pipeline_architecture.png
+│   ├── pipeline_architecture.jpg
 │   ├── pipeline_architecture.svg
 │   └── pipeline_architecture.mmd
 ├── configs/
@@ -100,7 +102,8 @@ See [`architecture/pipeline_architecture.png`](architecture/pipeline_architectur
 │   ├── features/
 │   ├── training/
 │   ├── evaluation/
-│   └── screenshots/
+│   ├── screenshots/
+│   └── 2025ag05348_DM4ML_Assignment_2_Report.pdf
 ├── src/
 │   ├── ingestion/ingest_data.py
 │   ├── validation/validate_data.py
@@ -308,3 +311,7 @@ The final verification task confirmed that **19 required pipeline artifacts** ex
 **BITS Student ID:** `2025ag05348`  
 **Course:** Data Management for Machine Learning (DM4ML)  
 **Assignment 2:** End-to-End Data Management Pipeline for a Recommendation System
+
+## 16. Final report
+
+The concise 3-page assignment report is available at [`reports/2025ag05348_DM4ML_Assignment_2_Report.pdf`](reports/2025ag05348_DM4ML_Assignment_2_Report.pdf). It summarizes the architecture, tools, validation and preparation results, feature engineering, model comparison, orchestration evidence, design decisions and limitations. This README remains the detailed setup and reproduction guide.
